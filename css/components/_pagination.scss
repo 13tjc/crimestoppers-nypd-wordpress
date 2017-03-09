@@ -1,0 +1,113 @@
+// pagination
+.pagination {
+  background: $off-white;
+  border: 1px solid #dadfe6;
+  display: table;
+  height: 50px;
+  margin: 0 auto;
+  @include remSize('max-width', 350px);
+  width: 100%;
+
+  @include breakpoint(lg) {
+    background: transparent;
+    border: 0;
+    display: block;
+    @include fontSize(14);
+    height: 25px;
+    @include remSize('line-height', 25px);
+    width: auto;
+  }
+
+}
+  .pagination__item {
+    border-left: 1px solid #dadfe6;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 50px;
+
+    @include breakpoint(lg) {
+      border: 0;
+      display: inline-block;
+      width: 25px;
+    }
+
+    &:first-child {
+      border-left: 0;
+    }
+
+    &--first {
+
+      a {
+        background-position: 0 0;
+      }
+
+    }
+
+    &--prev {
+
+      a {
+        background-position: -50px center;
+
+        @include breakpoint(lg) {
+          background-position: -25px center;
+        }
+
+      }
+
+    }
+
+    &--current {
+      background: #f7f9fc;
+      color: #082a4d;
+      font-weight: $font-weight-light;
+      width: auto;
+
+      @include breakpoint(lg) {
+        background: transparent;
+        @include remSize('padding', 0 10px);
+      }
+
+    }
+
+    &--next {
+
+      a {
+        background-position: -100px center;
+
+        @include breakpoint(lg) {
+          background-position: -50px center;
+        }
+
+      }
+
+    }
+
+    &--last {
+
+      a {
+        background-position: -150px center;
+
+        @include breakpoint(lg) {
+          background-position: -75px center;
+        }
+
+      }
+
+    }
+
+  }
+  .pagination__link {
+    background: url(../img/icon/pagination-sm.png) no-repeat 0 0 $white;
+    @include image2x('../img/icon/pagination-sm-2x.png', 200, 50);
+    display: block;
+    height: 50px;
+    text-indent: -9999px;
+
+    @include breakpoint(lg) {
+      background: url(../img/icon/pagination.png) no-repeat 0 0 $white;
+      @include image2x('../img/icon/pagination-2x.png', 100, 25);
+      height: 25px;
+    }
+
+  }

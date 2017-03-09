@@ -1,0 +1,244 @@
+// footer
+.footer {
+  background: $footer-bg-color;
+  color: $footer-text-color;
+  margin: 0 auto;
+  max-width: $page-max-width;
+  @include remSize('padding-bottom', 60px);
+
+  @include breakpoint(md) {
+    padding-bottom: 0;
+  }
+
+  @include breakpoint(lg) {
+    height: $footer-height;
+    @include remSize('margin-top', -$footer-height); // for sticky footer
+  }
+
+}
+  .footer__primary {
+    align-items: center;
+    background: url(../img/bg/brooklyn-bridge-sm.jpg) no-repeat center bottom;
+    background-size: cover;
+    display: flex;
+    min-height: 270px;
+    @include remSize('padding', 40px 0);
+    text-align: center;
+
+    @include breakpoint(lg) {
+      background: url(../img/bg/brooklyn-bridge.jpg) no-repeat center bottom;
+      background-size: auto;
+      display: block;
+      @include remSize('padding', 80px 0 60px);
+      height: $footer-primary-height;
+    }
+
+
+  }
+    .footer__primary__callout {
+      @include remSize('margin-bottom', 20px);
+      text-align: center;
+
+      p {
+        border: 3px solid $light-color;
+        display: inline-block;
+        font-family: $font-condensed;
+        @include fontSize(36);
+        font-weight: $font-weight-bold;
+        line-height: 1;
+        @include remSize('padding', 15px);
+        text-transform: uppercase;
+
+        @include breakpoint(lg) {
+          border-width: 6px;
+          @include fontSize(60);
+          @include remSize('padding', 30px);
+        }
+
+        span {
+          @include breakpoint(xsm) {
+            display: block;
+          }
+        }
+
+      }
+
+    }
+    .footer__primary__contact {
+      line-height: 1.2;
+    }
+      .footer__primary__contact__phone {
+        @include fontSize(30);
+        margin: 0;
+
+        a {
+          color: #fff;
+        }
+
+        @include breakpoint(lg) {
+          @include fontSize(36);
+        }
+
+        &--alt {
+          @include fontSize(14);
+          font-weight: $font-weight-bold;
+        }
+
+      }
+  .footer__secondary {
+    @include remSize('padding', 40px 0);
+    text-align: center;
+
+    @include breakpoint(lg) {
+      height: $footer-secondary-height;;
+      @include remSize('padding', 60px 0);
+      text-align: left;
+    }
+
+  }
+    .footer__secondary__content {
+
+      @include breakpoint(lg) {
+        float: right;
+        width: 50%;
+      }
+
+      &:first-child {
+        border-bottom: 1px solid #333;
+        @include remSize('margin-bottom', 30px);
+        @include remSize('padding-bottom', 30px);
+
+        @include breakpoint(lg) {
+          @include clearfix;
+          border: 0;
+          float: left;
+          margin: 0;
+          padding: 0;
+          width: 50%;
+        }
+
+      }
+
+    }
+      .footer__nypd-logo {
+        background: url(../img/logo/nypd-shield.png) no-repeat 0 0;
+        @include image2x('../img/logo/nypd-shield-2x.png', 65, 81);
+        display: inline-block;
+        height: 81px;
+        @include remSize('margin-bottom', 20px);
+        text-indent: -9999px;
+        width: 65px;
+
+        @include breakpoint(lg) {
+          float: left;
+          @include remSize('margin', 0 15px 0 0);
+        }
+
+      }
+      .footer__nav {
+        @include remSize('margin-bottom', 40px);
+
+        @include breakpoint(lg) {
+          @include remSize('margin-bottom', 20px);
+        }
+
+      }
+        .footer__nav__list {
+
+          &--secondary {
+
+            li {
+              display: inline-block;
+              @include fontSize(12);
+
+              &:after {
+                background: #474747;
+                content: "";
+                display: inline-block;
+                height: 10px;
+                @include remSize('margin', 0 10px);
+                position: relative;
+                vertical-align: middle;
+                width: 1px;
+              }
+
+              &:last-child {
+
+                &:after {
+                  display: none;
+                }
+
+              }
+
+            }
+
+            a {
+              color: $footer-link-color;
+
+              &:hover {
+                color: $footer-link-hover-color;
+              }
+            }
+
+          }
+
+        }
+          .footer__nav__item {
+            display: inline-block;
+            @include fontSize(14);
+
+            &:after {
+              background: #474747;
+              content: "";
+              display: inline-block;
+              height: 12px;
+              @include remSize('margin', 0 10px);
+              position: relative;
+              vertical-align: middle;
+              width: 1px;
+            }
+
+            &:last-child {
+
+              &:after {
+                display: none;
+              }
+
+            }
+
+          }
+            .footer__nav__item__link {
+              color: $footer-link-color;
+
+              &:hover {
+                color: $footer-link-hover-color;
+              }
+
+            }
+      .footer__nyc-logo {
+        background: url(../img/logo/nyc.png) no-repeat 0 0;
+        @include image2x('../img/logo/nyc-2x.png', 120, 40);
+        display: inline-block;
+        height: 40px;
+        @include remSize('margin-bottom', 20px);
+        text-indent: -9999px;
+        width: 120px;
+
+        @include breakpoint(lg) {
+          float: right;
+        }
+
+      }
+      .footer__copyright {
+        @include fontSize(12);
+
+        @include breakpoint(lg) {
+          clear: both;
+          text-align: right;
+        }
+
+        p {
+          margin: 0;
+        }
+
+      }

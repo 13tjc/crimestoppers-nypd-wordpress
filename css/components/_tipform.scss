@@ -1,0 +1,232 @@
+// tip form
+.tip-form {
+
+  @include breakpoint(md) {
+    border: 1px solid #c3d5ec;
+    margin: 0 auto;
+    max-width: 830px;
+  }
+
+}
+.no-js {
+
+  .tip-form {
+
+    .fields--hidden {
+      display: block;
+    }
+
+  }
+
+}
+  .tip-form__block {
+    border-top: 1px solid $light-gray;
+    @include remSize('padding', 30px 0);
+
+    @include breakpoint(md) {
+      margin: 0 auto;
+      max-width: 600px;
+      @include remSize('padding', 40px 0);
+    }
+
+    @include breakpoint(lg) {
+      @include remSize('padding', 50px 0);
+    }
+
+    &:first-child {
+      border-top: 0;
+    }
+
+  }
+    .tip-form__block__title {
+      @include fontSize(20);
+      font-weight: $font-weight-light;
+      @include remSize('margin-bottom', 20px);
+
+      @include breakpoint(md) {
+        @include fontSize(24);
+        @include remSize('margin-bottom', 30px);
+        text-align: center;
+      }
+
+    }
+    .tip-form__block__subtitle {
+      @include remSize('margin', 20px 0 10px);
+
+      @include breakpoint(md) {
+        @include remSize('margin', 20px 0 20px);
+        text-align: center;
+      }
+
+
+    }
+    .tip-form__block__content {
+
+      @include breakpoint(md) {
+        margin: 0 auto;
+        max-width: 400px;
+      }
+
+    }
+    .tip-form__block__content {
+
+      .fields--split {
+
+        @include breakpoint(md) {
+          text-align: center;
+        }
+
+      }
+
+    }
+    .tip-form__required {
+      color: #ff0000;
+
+      @include fontSize(12);
+
+      @include breakpoint(md) {
+        @include fontSize(14);
+        text-align: center;
+      }
+
+    }
+    .tip-form__field-title {
+      @include remSize('margin', 20px 0);
+
+      @include breakpoint(md) {
+        text-align: center;
+      }
+
+    }
+    .tip-form__button {
+      border: 2px solid #29bce7;
+      color: #fff;
+      @include remSize('line-height', 36px);
+      margin: 0 auto;
+      min-width: 0;
+      @include remSize('padding', 0 15px);
+      width: 100%;
+
+      @include breakpoint(md) {
+        @include fontSize(20);
+        @include remSize('line-height', 56px);
+        @include remSize('padding', 0 20px);
+      }
+
+    }
+    .tip-form__block__button-container {
+      @include remSize('margin-bottom', 20px);
+      position: relative;
+
+      @include breakpoint(md) {
+        @include remSize('margin-bottom', 40px);
+        text-align: center;
+      }
+
+    }
+    .tip-form__block__content__note {
+      @include fontSize(14);
+    }
+    .tip-form__recaptcha {
+      @include remSize('margin-bottom', 20px);
+
+      @include breakpoint(md) {
+        @include remSize('margin', 0 auto 40px);
+        text-align: center;
+      }
+    
+
+      .g-recaptcha {
+        @include remSize('margin', 0 auto 20px);
+
+        div {
+          width: 100%!important;
+        }
+
+      }
+
+      #rc-imageselect,
+      .g-recaptcha {
+
+        @include breakpoint(sm) {
+          transform:scale(0.95);
+          -webkit-transform:scale(0.95);
+          transform-origin:0 0;
+          -webkit-transform-origin:0 0;
+        }
+
+      }
+
+    }
+    .tip-form__error-msg {
+      background: #faf1f0;
+      border: 1px solid #e65245;
+      border-radius: 3px;
+      @include remSize('padding', 10px 15px 10px 43px);
+      color: #cc493d;
+      @include remSize('margin-bottom', 20px);
+      position: relative;
+
+      @include breakpoint(md) {
+        @include remSize('padding', 20px 20px 20px 54px);
+        @include remSize('margin-bottom', 40px);
+      }
+
+      &:before {
+        background: url(../img/icon/error-alert.png) no-repeat;
+        @include image2x('../img/icon/error-alert-2x.png', 18, 18);
+        content: "";
+        display: block;
+        height: 18px;
+        left: 15px;
+        position: absolute;
+        top: 12px;
+        width: 18px;
+
+        @include breakpoint(md) {
+          left: 20px;
+          top: 22px;
+        }
+
+      }
+
+      p {
+        @include fontSize(14);
+        margin: 0;
+        text-align: left;
+
+        @include breakpoint(md) {
+          @include fontSize(16);
+
+        }
+      }
+
+    }
+    .tip-form__loader {
+      background: $lighter-gray;
+      border-radius: 2px;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+
+      span {
+        background: url(../img/icon/loader.gif) no-repeat left center;
+        @include image2x('../img/icon/loader-2x.gif', 30, 30);
+        display: inline-block;
+        @include fontSize(16);
+        font-style: italic;
+        @include remSize('line-height', 36px);
+        min-height: 30px;
+        @include remSize('padding-left', 40px);
+
+        @include breakpoint(md) {
+          @include fontSize(18);
+          @include remSize('line-height', 56px);
+        }
+
+      }
+
+    }

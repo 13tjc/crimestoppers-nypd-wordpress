@@ -1,0 +1,169 @@
+// fancybox
+.fancybox-wrap {
+  left: 0;
+  outline: none;
+  position: absolute;
+  top: 0;
+  z-index: $z-index-overlay - 1;
+}
+
+.fancybox-skin {
+  background: $white;
+  padding: 5px!important;
+  position: relative;
+}
+
+.fancybox-opened {
+  z-index: $z-index-overlay;
+}
+.fancybox-outer,
+.fancybox-inner {
+  position: relative;
+}
+.fancybox-inner {
+  overflow: hidden;
+}
+.fancybox-type-iframe .fancybox-inner {
+  -webkit-overflow-scrolling: touch;
+}
+.fancybox-error {
+  @include remSize('padding', 10px 5px);
+  white-space: nowrap;
+}
+.fancybox-image,
+.fancybox-iframe {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.fancybox-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#fancybox-loading { // FIX
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -22px;
+	margin-left: -22px;
+	background-position: 0 -108px;
+	opacity: 0.8;
+	cursor: pointer;
+	z-index: 8060;
+}
+
+#fancybox-loading div { // FIX
+	width: 44px;
+  height: 44px;
+	background: url(fancybox_loading.gif) center center no-repeat;
+}
+
+.fancybox-close {
+  background: url(../img/icon/close.png) no-repeat center center;
+  @include image2x('../img/icon/close-2x.png', 21, 21);
+  height: 30px;
+  position: absolute;
+  right: 0;
+  top: -30px;
+  width: 30px;
+  z-index: $z-index-overlay + 1;
+
+  @include breakpoint(lg) {
+
+    right: -30px;
+
+  }
+
+}
+.fancybox-nav {
+  background: url(../img/icon/gallery-arrows.png) no-repeat 0 0;
+  bottom: -35px;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+  z-index: $z-index-overlay + 1;
+}
+.fancybox-prev {
+  right: 30px;
+}
+.fancybox-next {
+  background-position: -30px 0;
+  right: 0;
+}
+
+.fancybox-tmp {
+	position: absolute;
+	top: -99999px;
+	left: -99999px;
+	max-width: 99999px;
+	max-height: 99999px;
+	overflow: visible !important;
+}
+
+// Overlay helper
+.fancybox-lock {
+  overflow: visible !important;
+  width: auto;
+}
+.fancybox-lock body {
+  overflow: hidden !important;
+}
+.fancybox-lock-test {
+  overflow-y: hidden !important;
+}
+.fancybox-overlay {
+  background: $overlay-bg-color;
+  display: none;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  z-index: $z-index-overlay;
+}
+.fancybox-overlay-fixed {
+  bottom: 0;
+  position: fixed;
+  right: 0;
+}
+.fancybox-lock .fancybox-overlay {
+  overflow: auto;
+  overflow-y: scroll;
+}
+
+// Title helper
+.fancybox-title {
+  @include fontSize(14);
+  min-height: 40px;
+  @include remSize('padding', 10px 130px 5px 5px);
+  position: relative;
+  visibility: hidden;
+
+  .photo-count {
+    @include fontSize(12);
+    font-weight: $font-weight-medium;
+    @include remSize('line-height', 30px);
+    position: absolute;
+    right: 60px;
+    top: 5px;
+  }
+
+}
+.fancybox-opened .fancybox-title {
+  visibility: visible;
+}
+.fancybox-title-float-wrap {
+  
+}
+.fancybox-title-float-wrap .child {
+  
+}
+.fancybox-title-outside-wrap {
+  
+}
+.fancybox-title-inside-wrap {
+  
+}
+.fancybox-title-over-wrap {
+  
+}

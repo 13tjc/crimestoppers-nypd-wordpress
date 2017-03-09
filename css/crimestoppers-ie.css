@@ -1,0 +1,138 @@
+.field__input {
+  min-height: auto;
+}
+
+.select__input {
+  min-height: auto;
+}
+
+.radio__input {
+  display: inline-block;
+  height: auto;
+  overflow: auto;
+  position: relative;
+  width: auto;
+}
+
+.radio__label {
+  display: inline-block;
+  min-height: auto;
+  padding: 0 0 0 20px !important;
+}
+.radio__label:before, .radio__label:after {
+  display: none;
+}
+
+.checkbox__input {
+  display: inline-block;
+  height: auto;
+  overflow: auto;
+  position: relative;
+  width: auto;
+}
+
+.checkbox__label {
+  display: inline-block;
+  font-size: 14px;
+  min-height: auto;
+  padding: 0 0 0 20px !important;
+}
+.checkbox__label:before, .checkbox__label:after {
+  display: none;
+}
+
+.tip-cards--hidden {
+  display: none;
+}
+
+.tip-modal-overlay {
+  background: url(../img/bg/bg-overlay.png) repeat;
+}
+
+.tip-submission-overlay,
+.tip-submission-bar {
+  display: none !important;
+}
+
+.tip-card {
+  min-height: auto;
+  padding-bottom: 100px;
+  width: 600px;
+}
+.tip-card:before {
+  background: url(../img/bg/bg-overlay.png) repeat;
+  z-index: 9999;
+  zoom: 1;
+}
+.tip-card .tip-card__contact,
+.tip-card .tip-card__content,
+.tip-card .tip-card__buttons,
+.tip-card .tip-card__footer {
+  display: none;
+}
+.tip-card--active .tip-card__contact,
+.tip-card--active .tip-card__content,
+.tip-card--active .tip-card__buttons,
+.tip-card--active .tip-card__footer {
+  display: block;
+}
+
+.tip-card__title {
+  min-height: auto;
+}
+
+.card {
+  border-top: 4px solid transparent;
+  position: relative;
+}
+.card:before {
+  display: none;
+}
+.card--wanted {
+  border-top-color: #e64b17;
+}
+.card--victim {
+  border-top-color: #41b3d9;
+}
+.card--closed:after {
+  display: none;
+}
+
+.card__status {
+  background: url(../img/bg/bg-card-overlay.png) repeat;
+  color: #fff;
+}
+
+.card__profile {
+  zoom: 1;
+}
+
+.slick-arrow {
+  background: url(../img/icon/slider-arrows.png) no-repeat 0 0;
+}
+.slick-arrow.slick-prev {
+  background-position: 0 center;
+}
+.slick-arrow.slick-prev.slick-disabled {
+  background-position: -80px center;
+}
+.slick-arrow.slick-next {
+  background-position: -40px center;
+}
+.slick-arrow.slick-next.slick-disabled {
+  background-position: -120px center;
+}
+
+.community__link:before {
+  background: url(../img/bg/bg-community.png) repeat;
+}
+.community__link:hover:before {
+  background: url(../img/bg/bg-hover-community.png) repeat;
+}
+
+.tip-submission__block {
+  margin-right: 0 !important;
+  width: 47%;
+}
+
+/*# sourceMappingURL=crimestoppers-ie.css.map */

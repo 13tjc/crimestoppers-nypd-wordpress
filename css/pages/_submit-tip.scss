@@ -1,0 +1,104 @@
+// submit a tip
+.submit-tip {
+  @include remSize('padding-bottom', 50px);
+
+  .page-title {
+    margin-bottom: 0;
+  }
+
+}
+  .submit-tip__intro {
+    @include fontSize(14);
+    @include remSize('padding', 30px 0 0);
+
+    @include breakpoint(md) {
+      @include fontSize(16);
+      margin: 0 auto;
+      max-width: 600px;
+      @include remSize('padding', 40px 0);
+      text-align: center;
+    }
+
+    @include breakpoint(lg) {
+      @include fontSize(18);
+      @include remSize('padding', 60px 0);
+    }
+
+    p {
+
+      span {
+        color: $light-blue;
+      }
+
+    }
+
+  }
+  .submit-tip__confirmation {
+
+    @include remSize('padding', 30px 0);
+
+    @include breakpoint(md) {
+      margin: 0 auto;
+      max-width: 600px;
+      @include remSize('padding', 40px 0);
+    }
+
+    @include breakpoint(lg) {
+      @include remSize('padding', 50px 0);
+    }
+
+  }
+  .submit-tip__confirmation__title {
+    @include remSize('margin-bottom', 30px);
+
+    @include breakpoint(md) {
+      @include remSize('margin-bottom', 40px);
+      text-align: center;
+    }
+ 
+  }
+  .submit-tip__confirmation__block {
+    background: $off-white;
+    @include remSize('margin-bottom', 20px);
+    @include remSize('padding', 20px);
+
+    @include breakpoint(md) {
+      @include remSize('margin-bottom', 40px);
+      @include remSize('padding', 40px);
+      text-align: center;
+    }
+
+  }
+    .submit-tip__confirmation__block__label {
+      text-transform: uppercase;
+      @include remSize('margin-bottom', 10px);
+      font-weight: $font-weight-medium;
+      line-height: 1;
+
+      @include breakpoint(md) {
+        @include fontSize(18);
+        @include remSize('margin-bottom', 20px);
+      }
+
+    }
+    .submit-tip__confirmation__block__number {
+      color: $light-blue;
+      @include fontSize(40);
+      font-weight: $font-weight-light;
+      line-height: 1;
+
+      @include breakpoint(md) {
+        @include fontSize(90);
+      }
+
+    }
+    .submit-tip__confirmation__instructions {
+      @include fontSize(14);
+      margin: 0;
+
+      @include breakpoint(md) {
+        @include fontSize(18);
+        text-align: center;
+      }
+
+    }

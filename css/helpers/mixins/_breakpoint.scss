@@ -1,0 +1,42 @@
+// responsive breakpoints
+@mixin breakpoint($viewport) {
+
+  @if $viewport == xlg {
+    @media (min-width: $breakpoint-lg + 1) { @content; }
+  }
+
+  @else if $viewport == md-lg {
+    @media (min-width: $breakpoint-md + 1) and (max-width: $breakpoint-lg) { @content; }
+  }
+
+  @else if $viewport == lg {
+    @media (min-width: $breakpoint-md + 1) { @content; }
+  }
+
+  @else if $viewport == sm-md {
+    @media (min-width: $breakpoint-sm + 1) and (max-width: $breakpoint-md) { @content; }
+  }
+
+  @else if $viewport == md {
+    @media (min-width: $breakpoint-sm + 1) { @content; }
+  }
+
+  @else if $viewport == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+
+  @else if $viewport == xsm {
+    @media (max-width: 400px) { @content; }
+  }
+
+}
+
+// used to write out breakpoint names in an after psuedo element using content property
+@mixin define-breakpoint($name) {
+
+  &:after {
+    content: $name;
+    display: none;
+  }
+
+}

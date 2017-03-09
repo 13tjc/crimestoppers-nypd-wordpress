@@ -1,0 +1,451 @@
+// form
+
+// fields
+.fields {
+  position: relative;
+
+  &--hidden {
+    display: none;
+  }
+
+  &--split {
+    @include remSize('margin-bottom', 20px);
+
+    .field {
+      display: inline-block;
+      margin-bottom: 0;
+      @include remSize('margin-left', 20px);
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+    }
+
+  }
+
+  &--replicable {
+    @include clearfix;
+    @include remSize('margin-bottom', 10px);
+
+    .field {
+      @include remSize('margin-bottom', 10px);
+
+      @include breakpoint(md) {
+        float: left;
+        margin: 0;
+        width: 50%;
+      }
+
+      @include breakpoint(md) {
+        margin-bottom: 0;
+        @include remSize('padding-left', 5px);
+      }
+
+      &:first-child {
+
+        @include breakpoint(md) {
+          @include remSize('padding-left', 0);
+          @include remSize('padding-right', 5px);
+        }
+
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+    }
+
+    .field__remove-btn {
+      background: url(../img/icon/remove.png) no-repeat center center;
+      @include image2x('../img/icon/remove-2x.png', 12, 12);
+      bottom: 0;
+      display: block;
+      height: 45px;
+      position: absolute;
+      text-indent: -9999px;
+      right: 0;
+      width: 40px;
+
+      @include breakpoint(md) {
+        right: -40px;
+      }
+
+    }
+
+  }
+
+  &--checkboxes {
+    @include remSize('margin-bottom', 10px);
+    @include remSize('padding-left', 28px);
+
+  }
+
+}
+.field {
+  @include remSize('margin-bottom', 10px);
+  outline: 0;
+  position: relative;
+
+  &--hidden {
+    display: none;
+  }
+
+  &--error {
+
+    .select__input {
+      border-color: #ff0000;
+    }
+
+  }
+
+  &--required {
+    position: relative;
+
+    &:before {
+      color: #ff0000;
+      content: "*";
+      left: -12px;
+      @include fontSize(12);
+      position: absolute;
+      top: 12px;
+
+      @include breakpoint(md) {
+        @include fontSize(14);
+      }
+
+    }
+
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+  // label
+  .field__label {
+    @include fontSize(14);
+    @include screenreader;
+  }
+
+  // text input
+  .field__input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    background: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    display: block;
+    @include fontSize(14);
+    min-height: 45px;
+    outline: 0;
+    @include remSize('padding', 10px 15px);
+    width: 100%;
+
+    &:focus {
+      background-color: $lighter-blue;
+      border-color: #c4d5eb;
+    }
+
+    @include breakpoint(md) {
+      @include fontSize(16);
+    }
+
+    &--date-picker {
+      background-image: url(../img/icon/field-calendar.png);
+      background-position: right center;
+      background-repeat: no-repeat;
+      @include image2x('../img/icon/field-calendar-2x.png', 26, 16);
+      border-color: $light-gray;
+      @include remSize('padding-right', 35px);
+    }
+
+  }
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+  }
+  input[type="search"] {
+    -webkit-appearance: none;
+  }
+  input::-webkit-calendar-picker-indicator{
+      display: none;
+  }
+  input[type="date"]::-webkit-input-placeholder{ 
+      visibility: hidden !important;
+  }
+  textarea {
+
+    &.field__input {
+      min-height: 100px;
+    }
+
+  }
+  .field__add-btn {
+    background: url(../img/icon/add.png) no-repeat 15px center #fafbfc;
+    @include image2x('../img/icon/add-2x.png', 14, 14);
+    border: 1px dashed #e1e6eb;
+    display: block;
+    @include fontSize(14);
+    max-width: 220px;
+    @include remSize('padding', 10px 15px 10px 44px);
+    width: 100%;
+
+    @include breakpoint(md) {
+      @include fontSize(12);
+      max-width: 100%;
+    }
+
+  }
+  .field__error-msg {
+    color: #ff0000;
+    @include fontSize(12);
+    @include remSize('margin-top', 10px);
+
+    @include breakpoint(md) {
+      @include fontSize(16);
+    }
+
+  }
+
+// select input
+.select {}
+  .select__label {
+    @include screenreader;
+  }
+  .select__input {
+    @include vendor(appearance, none);
+    background: url(../img/icon/select-arrow.png) no-repeat right center $white;
+    @include image2x('../img/icon/select-arrow-2x.png', 27, 8);
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    @include fontSize(14);
+    min-height: 45px;
+    outline: 0;
+    @include remSize('padding', 10px 15px);
+    width: 100%;
+
+    &:focus {
+      background-color: $lighter-blue;
+      border-color: #c4d5eb;
+    }
+
+    @include breakpoint(md) {
+      @include fontSize(16);
+    }
+
+  }
+
+// radio input
+.radio {
+  position: relative;
+
+  &--large {
+
+    .radio__label {
+      min-height: 40px;
+      @include remSize('padding-left', 55px);
+
+      &:before {
+        height: 40px;
+        left: 0;
+        top: -6px;
+        width: 40px;
+      }
+
+      &:after {
+        height: 0;
+        left: 20px;
+        top: 14px;
+        width: 0;
+      }
+
+    }
+
+    .radio__input {
+
+      &:checked {
+
+        &+ {
+
+          .radio__label {
+
+            &:after {
+              background: #29bce7;
+              height: 24px;
+              width: 24px;
+            }
+
+          }
+
+        }
+
+      }
+
+      &:focus {
+
+        &+ {
+
+          .radio__label {
+
+            &:before {
+              background-color: $lighter-blue;
+              border-color: $light-blue;
+            }
+
+          }
+
+        }
+
+      }
+      
+
+    }
+
+  }
+
+}
+  .radio__input {
+    @include screenreader;
+
+    &:checked {
+
+      &+ {
+
+        .radio__label {
+
+          &:after {
+            background: #29bce7;
+            height: 10px;
+            width: 10px;
+          }
+
+        }
+
+      }
+ 
+    }
+
+  }
+
+  .radio__label {
+    cursor: pointer;
+    display: inline-block;
+    @include fontSize(18);
+    @include remSize('padding-left', 28px);
+    text-align: left;
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      background: #fafafa;
+      border: 1px solid #dcdcdc;
+      border-radius: 50%;
+      height: 18px;
+      left: 0;
+      top: 6px;
+      width: 18px;
+    }
+
+    &:after {
+      background: transparent;
+      border-radius: 50%;
+      height: 0;
+      left: 9px;
+      top: 15px;
+      @include vendor(transform, translateX(-50%) translateY(-50%));
+      @include vendor(transition, all $transition-speed);
+      width: 0;
+      z-index: 1;
+    }
+
+  }
+
+// checkbox input
+.checkbox {
+  position: relative;
+}
+  .checkbox__input {
+    @include screenreader;
+
+    &:checked {
+
+      &+ {
+
+        .checkbox__label {
+
+          &:after {
+            background: $light-blue;
+            height: 10px;
+            width: 10px;
+          }
+
+        }
+
+      }
+ 
+    }
+
+    &:focus {
+
+      &+ {
+
+        .checkbox__label {
+
+          &:before {
+            background-color: $lighter-blue;
+            border-color: $light-blue;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .checkbox__label {
+    cursor: pointer;
+    display: inline-block;
+    @include remSize('padding-left', 28px);
+
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+    }
+
+    &:before {
+      background: $white;
+      border: 1px solid $light-gray;
+      height: 18px;
+      left: 0;
+      top: 2px;
+      width: 18px;
+    }
+
+    &:after {
+      background: transparent;
+      height: 0;
+      left: 9px;
+      top: 11px;
+      @include vendor(transform, translateX(-50%) translateY(-50%));
+      @include vendor(transition, all $transition-speed);
+      width: 0;
+      z-index: 1;
+    }
+
+  }

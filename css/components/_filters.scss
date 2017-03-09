@@ -1,0 +1,150 @@
+// filters
+.filters {
+  border-bottom: 1px solid $light-gray;
+
+  @include breakpoint(lg) {
+    border: 0;
+  }
+
+  &--active {
+
+    .filters__content {
+      display: block;
+    }
+
+  }
+
+}
+  .filters__header {
+    background: $lighter-gray;
+    cursor: pointer;
+    display: table;
+    height: 50px;
+    @include remSize('padding', 0 $content-padding-sm);
+    position: relative;
+    width: 100%;
+
+    @include breakpoint(md) {
+      @include remSize('padding', 0 $content-padding-md);
+    }
+
+    @include breakpoint(lg) {
+      background: transparent;
+      cursor: default;
+      display: block;
+      height: auto;
+      padding: 0;
+    }
+
+    &--active {
+
+      .filters__title {
+
+        &:before {
+          @include vendor(transform, rotate(45deg));
+        }
+
+        &:after {
+          @include vendor(transform, rotate(-45deg));
+        }
+
+      }
+
+    }
+
+  }
+  .filters__title {
+    color: $blue;
+    display: table-cell;
+    @include fontSize(14);
+    font-weight: $font-weight-medium;
+    position: relative;
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    @include breakpoint(lg) {
+      display: block;
+      @include remSize('margin-bottom', 20px);
+    }
+
+    &:before,
+    &:after {
+      background: $blue;
+      content: "";
+      display: block;
+      height: 2px;
+      margin-top: -2px;
+      position: absolute;
+      right: 10px;
+      @include vendor(transition, all $transition-speed);
+      top: 50%;
+      width: 10px;
+
+      @include breakpoint(lg) {
+        display: none;
+      }
+
+    }
+
+    &:before {
+      @include vendor(transform, rotate(-45deg));
+      right: 0;
+    }
+
+    &:after {
+      @include vendor(transform, rotate(45deg));
+      right: 6px;
+    }
+
+  }
+  .filters__content {
+    border-top: 1px solid $light-gray;
+    @include remSize('padding', $content-padding-sm);
+    display: none;
+
+    @include breakpoint(md) {
+      @include remSize('padding', $content-padding-md);
+    }
+
+    @include breakpoint(lg) {
+      border: 0;
+      display: block;
+      padding: 0;
+    }
+
+  }
+  .filters__list {}
+    .filters__list__item {
+      @include remSize('margin-bottom', 15px);
+
+      &:last-child {
+        margin: 0;
+      }
+
+    }
+  .filters__date-range {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    @include breakpoint(lg) {
+      display: block;
+    }
+
+  }
+    .filters__date-range__field {
+      display: flex;
+      flex: 1;
+      margin: 0;
+      position: relative;
+    }
+    .filters__date-range__label {
+      color: $blue;
+      @include fontSize(15);
+      @include remSize('margin', 0 10px);
+
+      @include breakpoint(lg) {
+        @include remSize('margin', 10px 0);
+      }
+
+    }

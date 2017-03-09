@@ -1,0 +1,19 @@
+// wrapper
+@mixin wrapper {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: $content-max-width + ($content-padding-sm * 2);
+  @include remSize('padding', 0 $content-padding-sm);
+  position: relative;
+
+  @include breakpoint(md) {
+    max-width: $content-max-width + ($content-padding-md * 2);
+    @include remSize('padding', 0 $content-padding-md);
+  }
+
+  @include breakpoint(lg) {
+    max-width: $content-max-width + ($content-padding-lg * 2);
+    @include remSize('padding', 0 $content-padding-lg);
+  }
+
+}

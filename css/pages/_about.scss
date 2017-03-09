@@ -1,0 +1,248 @@
+// about
+.about {
+  @include remSize('padding', 40px 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 60px 0);
+  }
+}
+  .about__hero {
+    @include remSize('margin-bottom', -50px);
+
+    @include breakpoint(sm-md) {
+      @include remSize('margin-bottom', -75px);
+    }
+
+    @include breakpoint(lg) {
+      @include remSize('margin-bottom', -100px);
+    }
+
+  }
+  .about__hero__image {
+    text-align: center;
+
+    img {
+      margin: 0 auto;
+
+      @include breakpoint(lg) {
+        margin: 0;
+      }
+
+    }
+
+  }
+.tip-submission {
+  background: $off-white;
+  @include remSize('padding', 75px 0 40px);
+
+  @include breakpoint(lg) {
+    @include remSize('padding-top', 150px);
+  }
+
+}
+  .tip-submission__title {
+    color: $light-blue;
+    @include fontSize(22);
+    font-weight: $font-weight-light;
+    @include remSize('margin-bottom', 30px);
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint(lg) {
+      @include fontSize(48);
+      @include remSize('margin-bottom', 40px);
+    }
+
+  }
+  .tip-submission__blocks {
+
+    @include breakpoint(lg) {
+      @include clearfix;
+    }
+
+  }
+  .tip-submission__block {
+    background: #fff;
+    border: 1px solid #dae0f2;
+    @include fontSize(14);
+    @include remSize('margin-bottom', 6px);
+    @include remSize('padding', $content-padding-sm);
+
+    @include breakpoint(lg) {
+      float: left;
+      @include fontSize(16);
+      margin-right: percentage(4 / parseInt($content-max-width)); 
+      @include remSize('margin-bottom', 4px);
+      @include remSize('padding', $content-padding-md);
+      vertical-align: top;
+      width: percentage(498 / parseInt($content-max-width)); 
+    }
+
+    &--online {
+      margin-right: 0;
+
+      .tip-submission__block__title {
+
+        &:before {
+          background-position: 0 -45px;
+
+          @include breakpoint(lg) {
+            background-position: 0 -60px;
+          }
+
+        } 
+
+      }
+
+    }
+
+    &--text {
+
+      .tip-submission__block__title {
+
+        &:before {
+          background-position: 0 -90px;
+
+          @include breakpoint(lg) {
+            background-position: 0 -120px;
+          }
+
+        } 
+
+      }
+
+    }
+
+    &--app {
+      margin-right: 0;
+
+      .tip-submission__block__title {
+
+        &:before {
+          background-position: 0 -135px;
+
+          @include breakpoint(lg) {
+            background-position: 0 -180px;
+          }
+
+        } 
+
+      }
+
+    }
+
+  }
+    .tip-submission__block__title {
+      color: $dark-blue;
+      @include fontSize(24);
+      font-weight: $font-weight-medium;
+      @include remSize('line-height', 45px);
+      @include remSize('margin-bottom', 20px);
+
+      @include breakpoint(lg) {
+        @include fontSize(36);
+        @include remSize('line-height', 60px);
+        @include remSize('margin-bottom', 30px);
+      }
+
+      &:before {
+        background: url(../img/icon/tip-submission-methods-sm.png) no-repeat;
+        @include image2x('../img/icon/tip-submission-methods-sm-2x.png', 45, 180);
+        content: "";
+        display: block;
+        float: left;
+        height: 45px;
+        @include remSize('margin-right', 12px);
+        width: 45px;
+        vertical-align: middle;
+
+        @include breakpoint(lg) {
+          background: url(../img/icon/tip-submission-methods-lg.png) no-repeat;
+          @include image2x('../img/icon/tip-submission-methods-lg-2x.png', 60, 240);
+          height: 60px;
+          width: 60px;
+        }
+
+      }
+
+    }
+    .tip-submission__block__app-download {
+      @include remSize('margin', 40px 0 0 20px);
+
+      a {
+        display: inline-block;
+        @include remSize('margin-right', 10px);
+
+        &:last-child {
+          margin: 0;
+        }
+
+      }
+
+    }
+.tip-number {
+  background: $light-blue;
+  color: $white;
+  @include remSize('padding', 40px 0);
+  text-align: center;
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 50px 0);
+  }
+
+}
+  .tip-number__title {
+    @include fontSize(24);
+    @include remSize('margin-bottom', 30px);
+
+    @include breakpoint(lg) {
+      @include fontSize(30);
+      @include remSize('margin', 0 auto 20px);
+      max-width: 575px;
+    }
+
+  }
+  .tip-number__image {
+    @include remSize('margin-bottom', 40px);
+
+    @include breakpoint(lg) {
+      @include remSize('margin-bottom', 20px);
+    }
+
+    img {
+      margin: 0 auto;
+    }
+
+  }
+  .tip-number__content {
+
+    @include breakpoint(lg) {
+      @include fontSize(18);
+      @include remSize('margin', 0 auto);
+      max-width: 575px;
+    }
+
+  }
+.success-stories {
+  @include remSize('padding', 40px 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 50px 0);
+  }
+
+}
+  .success-stories__title {
+    @include fontSize(18);
+    line-height: 1;
+    @include remSize('margin-bottom', 30px);
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint(md) {
+      text-align: left;
+    }
+
+    @include breakpoint(lg) {
+      @include fontSize(24);
+    }
+  }

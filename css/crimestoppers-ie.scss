@@ -1,0 +1,179 @@
+// IE styles
+
+// form
+.field__input {
+  min-height: auto;
+}
+.select__input {
+  min-height: auto;
+}
+
+.radio__input {
+  display: inline-block;
+  height: auto;
+  overflow: auto;
+  position: relative;
+  width: auto;
+}
+.radio__label {
+  display: inline-block;
+  min-height: auto;
+  padding: 0 0 0 20px!important;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+
+}
+
+.checkbox__input {
+  display: inline-block;
+  height: auto;
+  overflow: auto;
+  position: relative;
+  width: auto;
+}
+.checkbox__label {
+  display: inline-block;
+  font-size: 14px;
+  min-height: auto;
+  padding: 0 0 0 20px!important;
+
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+// tip cards
+.tip-cards {
+
+  &--hidden {
+    display: none;
+  }
+
+}
+.tip-modal-overlay {
+  background: url(../img/bg/bg-overlay.png) repeat;
+}
+.tip-submission-overlay,
+.tip-submission-bar {
+  display: none!important;
+}
+.tip-card {
+  min-height: auto;
+  padding-bottom: 100px;
+  width: 600px;
+
+  &:before {
+    background: url(../img/bg/bg-overlay.png) repeat;
+    z-index: 9999;
+    zoom: 1;
+  }
+
+  .tip-card__contact,
+  .tip-card__content,
+  .tip-card__buttons,
+  .tip-card__footer {
+    display: none;
+  }
+
+  &--active {
+
+    &:before {
+
+    }
+
+    .tip-card__contact,
+    .tip-card__content,
+    .tip-card__buttons,
+    .tip-card__footer {
+      display: block;
+    }
+
+  }
+
+}
+.tip-card__title {
+  min-height: auto;
+}
+
+// card
+.card {
+  border-top: 4px solid transparent;
+  position: relative;
+
+  &:before {
+    display: none;
+  }
+
+  &--wanted {
+    border-top-color: #e64b17;
+  }
+
+  &--victim {
+    border-top-color: #41b3d9;
+  }
+
+  &--closed {
+
+    &:after {
+      display: none;
+    }
+
+  }
+
+}
+.card__status {
+  background: url(../img/bg/bg-card-overlay.png) repeat;
+  color: #fff;
+}
+.card__profile {
+  zoom: 1;
+}
+
+// slider
+.slick-arrow {
+  background: url(../img/icon/slider-arrows.png) no-repeat 0 0;
+
+  &.slick-prev {
+    background-position: 0 center;
+
+    &.slick-disabled {
+      background-position: -80px center;
+    }
+
+  }
+
+  &.slick-next {
+    background-position: -40px center;
+
+    &.slick-disabled {
+      background-position: -120px center;
+    }
+
+  }
+
+}
+
+// community
+.community__link {
+
+  &:before {
+    background: url(../img/bg/bg-community.png) repeat;
+  }
+
+  &:hover {
+    &:before {
+      background: url(../img/bg/bg-hover-community.png) repeat;
+    }
+  }
+
+}
+
+// about
+.tip-submission__block {
+  margin-right: 0!important;
+  width: 47%;
+}

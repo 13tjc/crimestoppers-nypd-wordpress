@@ -1,0 +1,231 @@
+// search results
+.search-results {
+  @include remSize('padding', 40px 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 50px 0);
+  }
+
+  .pagination {
+
+    @include breakpoint(lg) {
+      float: right;
+    }
+
+  }
+
+}
+  .search-results__header {
+    @include remSize('margin-bottom', 40px);
+
+    @include breakpoint(lg) {
+      border-bottom: 1px solid $light-gray;
+      @include clearfix;
+      @include remSize('margin-bottom', 30px);
+      @include remSize('padding-bottom', 30px);
+    }
+
+  }
+    .search-results__title {
+      @include fontSize(14);
+      font-weight: $font-weight-normal;
+      @include remSize('margin-bottom', 30px);
+      text-align: center;
+      text-transform: none;
+
+      @include breakpoint(lg) {
+        float: left;
+        @include remSize('line-height', 25px);
+        margin: 0;
+        text-align: left;
+      }
+
+    }
+      .search-results__title__term {
+        color: $light-blue;
+      }
+  .search-results__footer {
+
+    @include breakpoint(lg) {
+      @include clearfix;
+      border-top: 1px solid $light-gray;
+      @include remSize('padding-top', 30px);
+    }
+
+  }
+
+// results listing
+.results-listing {
+  @include remSize('margin-bottom', 30px);
+
+  @include breakpoint(xlg) {
+    @include remSize('padding', 0 75px);
+  }
+
+}
+  .results-listing__item {
+    background: $off-white;
+    border: 1px solid #e7e9ef;
+    @include fontSize(14);
+    @include remSize('margin-bottom', 15px);
+    @include remSize('padding', $content-padding-sm);
+
+    @include breakpoint(md) {
+      @include remSize('padding', $content-padding-md);
+    }
+
+    @include breakpoint(lg) {
+      @include fontSize(16);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--crime {
+      border: 0;
+      padding: 0;
+
+      @include breakpoint(lg) {
+        display: table;
+        width: 100%;
+      }
+
+      .card {
+        @include remSize('margin-bottom', -1px); // hide the bottom border
+        min-height: auto;
+
+        @include breakpoint(lg) {
+          display: table-cell;
+          margin: 0;
+          vertical-align: top;
+          width: 240px;
+        }
+
+        &:before {
+
+          @include breakpoint(lg) {
+            height: 100%;
+            height: calc(100% + 2px);
+            left: 0;
+            top: -1px;
+            width: 4px;
+          }
+
+        }
+
+      }
+        .card__crime {
+          margin: 0;
+        }
+
+    }
+
+  }
+    .results-listing__item__title {
+      @include fontSize(18);
+
+      @include breakpoint(lg) {
+        @include fontSize(20);
+      }
+
+    }
+    .results-listing__item__date {
+      @include fontSize(12);
+      color: $black;
+      @include remSize('margin-top', 4px);
+      text-transform: uppercase;
+    }
+    .results-listing__item__content {
+      @include remSize('margin-top', 10px);
+    }
+    .results-listing__item__url {
+      border-top: 1px solid $light-gray;
+      @include remSize('padding-top', 20px);
+      @include remSize('margin-top', 20px);
+      word-break: break-all;
+    }
+    .results-listing__item__container {
+      border: 1px solid #e7e9ef;
+      @include remSize('padding', $content-padding-sm);
+
+      @include breakpoint(md) {
+        @include remSize('padding', $content-padding-md);
+      }
+
+      @include breakpoint(lg) {
+        border-left: 0;
+        display: table-cell;
+        vertical-align: top;
+      }
+
+    }
+
+// no results
+.no-results {
+  text-align: center;
+
+  @include remSize('padding', 40px 0 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 50px 0);
+  }
+
+}
+  .no-results__title {
+    color: $black;
+    @include fontSize(24);
+    font-weight: $font-weight-light;
+    line-height: 1.2;
+    @include remSize('margin-bottom', 40px);
+    @include remSize('padding', 0 $content-padding-sm);
+    text-transform: none;
+
+    @include breakpoint(md) {
+      @include remSize('padding', 0 $content-padding-md);
+    }
+
+    @include breakpoint(lg) {
+      @include fontSize(36);
+      padding: 0;
+    }
+  }
+    .no-results__title__term {
+      color: $light-blue;
+    }
+  .no-results__content {
+    background: $off-white;
+    @include fontSize(16);
+    @include remSize('padding', ($content-padding-sm * 2) $content-padding-sm);
+    text-align: center;
+
+    @include breakpoint(md) {
+      @include remSize('padding', $content-padding-md);
+    }
+
+    @include breakpoint(lg) {
+      @include fontSize(18);
+      margin: 0 auto;
+      max-width: 680px;
+      @include remSize('padding', $content-padding-lg);
+    }
+
+    p {
+      @include breakpoint(lg) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+      }
+    }
+
+    .searchbox {
+      @include remSize('margin', 30px auto 0);
+      max-width: 490px;
+
+      @include breakpoint(lg) {
+        @include remSize('margin-top', 40px);
+      }
+
+    }
+
+  }

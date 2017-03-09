@@ -1,0 +1,80 @@
+// widths
+$page-max-width: 1260px;
+$content-max-width: 1000px;
+
+// padding
+$content-padding-sm: 20px;
+$content-padding-md: 30px;
+$content-padding-lg: 40px;
+
+// breakpoints
+$breakpoint-sm: 600px;
+$breakpoint-md: 800px;
+$breakpoint-lg: 1260px;
+
+// transitions
+$transition-speed: .3s;
+
+// z index levels
+$z-index-normal: 1;
+$z-index-overlay: 1000;
+$z-index-header: $z-index-overlay - 1;
+
+// typography
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+$base-font-family: 'Roboto', Helvetica, Arial, sans-serif;
+$base-font-size: 16px;
+$base-line-height: 1.4;
+
+// additional fonts
+$font-condensed: 'Roboto Condensed', 'Roboto', Helvetica, Arial, sans-serif;
+
+// colors
+$white: #fff;
+$black: #000;
+
+$dark-color: #333;
+$light-color: $white;
+
+$dark-gray: #1a1a1a;
+$gray: #3d454d;
+$light-gray: #c3d5ec;
+$lighter-gray: #e4f0ff;
+$off-white: #f3f5fc;
+$dark-blue: #082a4d;
+$blue: #2e5073;
+$light-blue: #2eb8e6;
+$lighter-blue: #f7fbff;
+
+// links
+$link-color: #2eb8e5;
+$link-hover-color: $dark-color;
+
+// overlays
+$overlay-bg-color: rgba(46,80,115,.90);
+
+// header
+$header-height-sm: 90px;
+$header-primary-height: 60px;
+$header-secondary-height: 45px;
+$header-height: $header-primary-height + $header-secondary-height;
+$header-overlay-bg-color: rgba(8,42,77,.95);
+
+// nav
+$nav-link-color: $dark-color;
+$nav-link-hover-color: $light-blue;
+$nav-item-height-sm: 80px;
+
+// footer
+$footer-primary-height: 360px;
+$footer-secondary-height: 240px;
+$footer-height: $footer-primary-height + $footer-secondary-height;
+$footer-bg-color: #1a1a1a;
+$footer-text-color: $light-color;
+$footer-link-color: $light-color;
+$footer-link-hover-color: $light-blue;

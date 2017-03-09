@@ -1,0 +1,16 @@
+// hero
+.hero {
+  background-color: $blue;
+  background-position: center top;
+  background-size: cover;
+  height: 150px;
+
+  @include breakpoint(md) {
+    height: 250px;
+  }
+
+  @include breakpoint(lg) {
+    height: 360px;
+  }
+
+}

@@ -1,0 +1,8 @@
+// vendor prefixing
+@mixin vendor($property, $values...) {
+
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
+    #{$prefix}#{$property}: $values;
+  }
+
+}

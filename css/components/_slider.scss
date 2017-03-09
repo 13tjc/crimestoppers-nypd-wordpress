@@ -1,0 +1,153 @@
+// slider - uses slick slider plugin
+.slick-slider {
+  display: block;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+
+  .slick-track,
+  .slick-list {
+    @include vendor(transform, translate3d(0, 0, 0));
+  }
+
+}
+.slick-list {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.dragging {
+    cursor: pointer;
+    cursor: hand;
+  }
+
+}
+.slick-track {
+  @include clearfix;
+  display: block;
+  left: 0;
+  position: relative;
+  top: 0;
+}
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  outline: 0;
+
+  a {
+    outline: 0;
+  }
+
+  &.slick-loading {
+
+    img {
+      display: none;
+    }
+
+  }
+
+  &.dragging {
+
+    img {
+      pointer-events: none;
+    }
+
+  }
+
+}
+[dir='rtl'] .slick-slide {
+  float: right;
+}
+.slick-slide img {
+  display: block;
+}
+.slick-initialized .slick-slide {
+  display: block;
+}
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+}
+.slick-arrow.slick-hidden {
+  display: none;
+}
+.slick-arrow {
+  background: url(../img/icon/slider-arrows.png) no-repeat 0 0 rgba(255,255,255,.85);
+  @include image2x('../img/icon/slider-arrows-2x.png', 160, 40);
+  height: 100%;
+  position: absolute;
+  text-indent: -9999px;
+  top: 0;
+  width: 40px;
+  z-index: 2;
+
+  @include breakpoint(lg) {
+    background-color: transparent;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px $light-blue;
+  }
+
+  &.slick-prev {
+    background-position: 0 center;
+    left: 0;
+
+    @include breakpoint(lg) {
+      left: -40px;
+    }
+
+    @include breakpoint(xlg) {
+      left: -60px;
+    }
+
+    &.slick-disabled {
+      background-position: -80px center;
+    }
+
+  }
+
+  &.slick-next {
+    background-position: -40px center;
+    right: 0;
+
+    @include breakpoint(lg) {
+      right: -40px;
+    }
+
+    @include breakpoint(xlg) {
+      right: -60px;
+    }
+
+    &.slick-disabled {
+      background-position: -120px center;
+    }
+
+  }
+
+  &.slick-disabled {
+
+    &:focus {
+      box-shadow: 0 0 0 2px #fff, 0 0 0 3px #c4d5eb;
+    }
+
+  }
+
+}

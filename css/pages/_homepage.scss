@@ -1,0 +1,567 @@
+// homepage
+
+// hero
+.hp-hero {
+  color: $white;
+  text-align: center;
+
+  @include breakpoint(lg) {
+    background: url(../img/bg/nyc-cityscape.jpg) no-repeat center 0;
+    height: 630px;
+  }
+
+}
+  .hp-hero__content {
+    background: url(../img/bg/nyc-cityscape-sm.jpg) no-repeat center 0;
+    display: table;
+    height: 315px;
+    width: 100%;
+
+    @include breakpoint(md) {
+      background-size: cover;
+    }
+
+    @include breakpoint(lg) {
+      background: none;
+      display: block;
+      height: auto;
+      @include remSize('margin-bottom', 60px);
+      @include remSize('padding-top', 75px);
+    }
+
+  }
+    .hp-hero__content__container {
+      display: table-cell;
+      @include remSize('padding', 0 $content-padding-sm);
+      vertical-align: middle;
+
+      @include breakpoint(lg) {
+        display: block;
+        @include wrapper;
+      }
+
+    }
+    .hp-hero__title {
+      @include fontSize(36);
+      font-weight: $font-weight-medium;
+      line-height: 1.2;
+      @include remSize('margin-bottom', 10px);
+      text-shadow: 0px 0px 10px rgba(0,0,0,.25);
+      text-transform: uppercase;
+
+      @include breakpoint(lg) {
+        @include fontSize(60);
+      }
+
+    }
+    .hp-hero__text {
+      @include fontSize(18);
+      text-shadow: 0px 0px 10px rgba(0,0,0,.75);
+
+      @include breakpoint(lg) {
+        @include fontSize(30);
+        @include remSize('margin', 0 auto 40px);
+        max-width: 550px;
+      }
+
+    }
+    .hp-hero__btn {
+
+      @include breakpoint(lg) {
+        @include fontSize(18);
+        @include remSize('padding', 10px 25px);
+      }
+
+    }
+  .hp-hero__callouts {
+    background: $dark-blue;
+    @include remSize('padding', 40px 0);
+
+    @include breakpoint(lg) {
+      background: none;
+      padding: 0;
+    }
+
+  }
+    .hp-hero__callouts__container {
+      @include remSize('padding', 0 $content-padding-sm);
+
+      @include breakpoint(lg) {
+        padding: 0;
+        @include wrapper;
+      }
+
+    }
+    .hp-hero__callout {
+
+      @include breakpoint(lg) {
+        float: left;
+        width: 33.33%;
+      }
+
+      &:after {
+        background: #1a4066;
+        content: "";
+        display: block;
+        height: 1px;
+        @include remSize('margin', 20px auto);
+        width: 90px;
+
+        @include breakpoint(lg) {
+          display: none;
+        }
+
+      }
+
+      &:last-child {
+
+        &:after {
+          display: none;
+        }
+
+      }
+
+      a {
+        color: $light-blue;
+      }
+
+    }
+      .hp-hero__callout__image {
+        @include remSize('margin-bottom', 20px);
+
+        @include breakpoint(lg) {
+          min-height: 60px;
+        }
+
+        img {
+          margin: 0 auto;
+        }
+
+      }
+      .hp-hero__callout__title {
+        @include fontSize(24);
+        font-weight: $font-weight-bold;
+        @include remSize('margin-bottom', 5px);
+        text-transform: uppercase;
+      }
+      .hp-hero__callout__text {
+        
+        @include breakpoint(lg) {
+          @include fontSize(18);
+        }
+
+      }
+
+// stats
+.hp-stats {
+  background: $light-blue;
+  color: $white;
+  @include remSize('padding', 30px 0 40px);
+  text-align: center;
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 30px 0);
+  }
+
+}
+  .hp-stats__header {
+    @include remSize('margin-bottom', 30px);
+
+    @include breakpoint(lg) {
+      @include fontSize(22);
+    }
+
+  }
+  .hp-stats__list {
+
+    @include breakpoint(lg) {
+      display: table;
+      height: 90px;
+      width: 100%;
+    }
+
+  }
+    .hp-stats__stat {
+
+      @include breakpoint(lg) {
+        border-left: 1px solid #2aa8d3;
+        display: table-cell;
+        vertical-align: middle;
+        width: 25%;
+      }
+
+      &:after {
+        background: #2aa8d3;
+        content: "";
+        display: block;
+        height: 1px;
+        @include remSize('margin', 20px auto);
+        width: 90px;
+
+        @include breakpoint(lg) {
+          display: none;
+        }
+
+      }
+
+      &:first-child {
+
+        @include breakpoint(lg) {
+          border-left: 0;
+        }
+
+      }
+
+      &:last-child {
+
+        &:after {
+          display: none;
+        }
+
+      }
+
+    }
+      .hp-stats__stat__num {
+        @include fontSize(48);
+        font-weight: $font-weight-medium;
+        line-height: 1;
+        @include remSize('margin-bottom', 5px);
+
+        span {
+          color: #bfefff;
+          font-weight: $font-weight-light;
+        }
+
+      }
+      .hp-stats__stat__label {
+        line-height: 1;
+      }
+// featured item
+.featured-item {
+  background: $off-white;
+  @include remSize('padding', 40px 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 60px 0);
+  }
+
+}
+  .featured-item__asset {
+    @include remSize('margin-bottom', 30px);
+
+    @include breakpoint(lg) {
+      float: left;
+      margin: 0;
+      width: percentage(480/parseInt($content-max-width));
+    }
+
+  }
+  .featured-item__asset__video {
+    height: 0;
+    padding-top: 25px;
+    padding-bottom: 56.25%; // 16:9
+    position: relative;
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+  }
+  .featured-item__content {
+
+    @include breakpoint(lg) {
+      float: right;
+      width: percentage(480/parseInt($content-max-width));
+    }
+
+  }
+    .featured-item__title {
+      color: $blue;
+      @include fontSize(20);
+      line-height: 1.2;
+      @include remSize('margin-bottom', 15px);
+
+      @include breakpoint(lg) {
+        @include fontSize(30);
+      }
+
+    }
+    .featured-item__description {
+      @include fontSize(14);
+      @include remSize('margin-bottom', 25px);
+
+      @include breakpoint(lg) {
+        @include fontSize(16);
+      }
+
+    }
+    .featured-item__cta {
+      @include button-to-link(lg);
+    }
+    .featured-item__share {
+      border-top: 1px solid $light-gray;
+      @include remSize('margin-top', 25px);
+      @include remSize('padding-top', 20px);
+    }
+      .featured-item__share__label {
+        display: inline-block;
+        @include fontSize(14);
+        @include remSize('line-height', 35px);
+        @include remSize('margin', 0 20px 0 0);
+      }
+
+// featured video
+.featured-video {
+  height: 100%;
+  width: 100%;
+}
+  .featured-video__placeholder {
+    background: url(../img/bg/news-van.jpg) center center #5a6071;
+    background-size: cover;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    span {
+      background: url(../img/icon/featured-video-play-btn.png) no-repeat;
+      @include image2x('../img/icon/featured-video-play-btn-2x.png', 125, 125);
+      display: block;
+      height: 125px;
+      left: 50%;
+      margin: -62.5px 0 0 -62.5px;
+      position: absolute;
+      top: 46%;
+      text-indent: -9999px;
+      width: 125px;
+    }
+
+    div {
+      background: rgba(0,0,0,.25);
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    p {
+      color: #fff;
+      @include fontSize(14);
+      line-height: 1.2;
+      margin: 0;
+      @include remSize('padding', 10px 15px);
+      text-transform: none;
+
+      strong {
+        text-transform: uppercase;
+
+        &:after {
+          border-right: 1px solid #20b7e7;
+          content: "";
+          display: inline-block;
+          height: 12px;
+          @include remSize('margin', 0 2px 0 6px);
+          position: relative;
+          top: -1px;
+          vertical-align: middle;
+        }
+
+      }
+
+    }
+
+  }
+
+// featured crimes
+.featured-crimes {
+  @include remSize('padding', 40px 0);
+  overflow: hidden;
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 50px 0);
+  }
+
+  .crime-legend {
+
+    @include breakpoint(lg) {
+      float: right;
+    }
+
+  }
+
+}
+  .featured-crimes__container {
+    text-align: center;
+
+    @include breakpoint(lg) {
+      @include wrapper;
+      text-align: left;
+    }
+
+  }
+  .featured-crimes__header {
+    @include remSize('margin-bottom', 30px);
+
+    @include breakpoint(lg) {
+      @include clearfix;
+    }
+
+  }
+    .featured-crimes__title {
+      @include fontSize(24);
+      @include remSize('margin-bottom', 20px);
+      text-align: center;
+      text-transform: uppercase;
+
+      @include breakpoint(lg) {
+        display: inline-block;
+        @include remSize('margin', 0 30px 0 0);
+        vertical-align: middle;
+      }
+
+    }
+    .featured-crimes__cta {
+      @include button-to-link(lg);
+
+      @include breakpoint(lg) {
+        float: right;
+        @include remSize('margin-top', 30px);
+      }
+
+    }
+
+// crimes slider
+.crimes-slider {
+  @include remSize('margin-bottom', 40px);
+
+  @include breakpoint(lg) {
+    margin: 0;
+  }
+
+  .slick-list {
+    @include remSize('margin', 0 -5px);
+  }
+
+}
+  .crimes-slider__slide {
+    @include remSize('margin', 0 5px);
+    width: 245px;
+
+    @include breakpoint(lg) {
+      width: 100%;
+    }
+
+  }
+  .crimes-slider__slide__title {
+    color: #999;
+    @include fontSize(14);
+    @include remSize('margin-bottom', 10px);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+// community
+.community {
+  background: $off-white;
+  @include remSize('padding', 40px 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 60px 0);
+  }
+
+  .story {
+    @include remSize('margin-bottom', 20px);
+  }
+
+}
+  .community__links {
+
+    @include breakpoint(lg) {
+      @include clearfix;
+    }
+
+  }
+  .community__link {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: table;
+    height: 320px;
+    @include remSize('margin', 0 auto 20px);
+    max-width: 320px;
+    @include remSize('padding', 20px);
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint(lg) {
+      float: left;
+      margin-left: percentage(20 / parseInt($content-max-width));
+      max-width: 100%;
+      width: percentage(320 / parseInt($content-max-width));
+    }
+
+    &:first-child {
+
+      @include breakpoint(lg) {
+        margin-left: 0;
+      }
+
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      color: $white;
+
+      &:before {
+        background: $light-blue;
+      }
+
+    }
+
+    &:before {
+      background: $dark-blue;
+      content: "";
+      height: 100%;
+      left: 0;
+      opacity: .75;
+      position: absolute;
+      @include vendor(transition, background $transition-speed);
+      top: 0;
+      width: 100%;
+    }
+
+    &:after {
+      background: url(../img/icon/community-link-arrow.png) no-repeat;
+      @include image2x('../img/icon/community-link-arrow-2x.png', 34, 34);
+      bottom: 40px;
+      content: "";
+      height: 34px;
+      left: 50%;
+      margin-left: -17px;
+      position: absolute;
+      width: 34px;
+    }
+
+    p {
+      @include fontSize(20);
+      line-height: 1.4;
+      position: relative;
+      z-index: 1;
+    }
+
+  }
+    .community__link__container {
+      display: table-cell;
+      vertical-align: middle;
+    }

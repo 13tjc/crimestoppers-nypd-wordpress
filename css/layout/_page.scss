@@ -1,0 +1,28 @@
+// page
+.page {
+
+  @include breakpoint(lg) {
+    min-height: 100%;
+  }
+
+  @include breakpoint(xlg) {
+    margin: 0 auto;
+    max-width: $page-max-width;
+    padding-top: $header-height;
+  }
+
+  .page__container {
+
+    @include breakpoint(lg) {
+      overflow: auto;
+      padding-bottom: $footer-height;
+    }
+
+  }
+
+}
+
+// wrapper
+.wrapper {
+  @include wrapper;
+}

@@ -1,0 +1,61 @@
+@import "base/reset";
+@import "base/typography";
+@import "base/buttons";
+@import "base/form";
+
+body {
+  background: $light-color;
+  color: $dark-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  overflow-x: hidden;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  // write out breakpoint names to hook to JS
+  @include breakpoint(sm) {
+    @include define-breakpoint("bp-sm");
+  }
+
+  @include breakpoint(md) {
+    @include define-breakpoint("bp-md");
+  }
+
+  @include breakpoint(lg) {
+    @include define-breakpoint("bp-lg");
+  }
+
+  @include breakpoint(xlg) {
+    @include define-breakpoint("bp-xlg");
+  }
+
+}
+
+// accessibility
+.skip-to-main {
+  background: $white;
+  border: 1px solid $white;
+  color: $blue;
+  display: inline-block;
+  @include fontSize(14);
+  left: 0;
+  outline: none;
+  @include remSize('padding', 8px);
+  position: absolute;
+  top: -40px;
+  @include vendor(transition, all .3s ease);
+  z-index: $z-index-normal;
+}
+.skip-to-main:focus {
+  border: 1px solid $blue;
+  top: 0;
+}
+
+
+// for screen readers
+.sr-only {
+  @include screenreader;
+}

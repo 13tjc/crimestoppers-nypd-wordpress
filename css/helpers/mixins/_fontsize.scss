@@ -1,0 +1,8 @@
+// rem font size conversion
+@mixin fontSize($sizeValue) {
+
+  font-size: ($sizeValue) + px;
+  font-size: ($sizeValue / 10) + rem;
+
+}
+

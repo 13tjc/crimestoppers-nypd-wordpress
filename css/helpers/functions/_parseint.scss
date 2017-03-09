@@ -1,0 +1,7 @@
+// returns number without unit
+@function parseInt($n) {
+
+  @return $n / ($n * 0 + 1);
+
+}
+

@@ -1,0 +1,89 @@
+// 404 page
+.page-not-found {
+  @include remSize('padding', 40px 0 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 80px 0);
+  }
+
+}
+  .page-not-found__container {
+
+    @include breakpoint(lg) {
+      @include wrapper;
+    }
+
+  }
+  .page-not-found__header {
+    @include remSize('margin-bottom', 30px);
+    @include remSize('padding', 0 $content-padding-sm);
+    text-align: center;
+
+    @include breakpoint(md) {
+      @include remSize('padding', 0 $content-padding-md);
+    }
+
+    @include breakpoint(lg) {
+      @include remSize('margin-bottom', 40px);
+      @include remSize('padding', 0);
+    }
+
+  }
+    .page-not-found__title {
+      color: $light-gray;
+      @include fontSize(40);
+      font-weight: $font-weight-medium;
+      line-height: 1;
+      @include remSize('margin-bottom', 20px);
+
+      @include breakpoint(lg) {
+        @include fontSize(60);
+      }
+
+    }
+    .page-not-found__subtitle {
+      color: $black;
+      @include fontSize(24);
+      font-weight: $font-weight-light;
+
+      @include breakpoint(lg) {
+        @include fontSize(36);
+      }
+
+    }
+  .page-not-found__content {
+    background: $off-white;
+    @include fontSize(16);
+    @include remSize('padding', ($content-padding-sm * 2) $content-padding-sm);
+    text-align: center;
+
+    @include breakpoint(md) {
+      @include remSize('padding', $content-padding-md);
+    }
+
+    @include breakpoint(lg) {
+      @include fontSize(18);
+      margin: 0 auto;
+      max-width: 680px;
+      @include remSize('padding', $content-padding-lg);
+    }
+
+    p {
+      @include breakpoint(lg) {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 400px;
+      }
+    }
+
+    .searchbox {
+      @include remSize('margin', 30px auto 0);
+      max-width: 490px;
+
+      @include breakpoint(lg) {
+        @include remSize('margin-top', 40px);
+      }
+
+    }
+
+  }

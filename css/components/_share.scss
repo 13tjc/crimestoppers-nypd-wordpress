@@ -1,0 +1,56 @@
+// share
+.share {
+  display: inline-block;
+  vertical-align: top;
+}
+  .share__item {
+    display: inline-block;
+    @include remSize('margin-right', 11px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+    .share__item__link {
+      background: url(../img/icon/share.png) no-repeat 0 0 $white;
+      @include image2x('../img/icon/share-2x.png', 245, 35);
+      border-radius: 50%;
+      display: block;
+      height: 35px;
+      text-indent: -9999px;
+     @include vendor(transition, background-color $transition-speed);
+      width: 35px;
+
+      &:hover {
+        background-color: #e4effd;
+      }
+
+      &--facebook {
+        background-position: 0 0;
+      }
+
+      &--twitter {
+        background-position: -35px 0;
+      }
+
+      &--youtube {
+        background-position: -70px 0;
+      }
+
+      &--instagram {
+        background-position: -105px 0;
+      }
+
+      &--gplus {
+        background-position: -140px 0;
+      }
+
+      &--email {
+        background-position: -175px 0;
+      }
+
+      &--print {
+        background-position: -210px 0;
+      }
+
+    }

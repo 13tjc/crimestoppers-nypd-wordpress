@@ -1,0 +1,20 @@
+// page title
+.page-title {
+  border-bottom: 1px solid $light-gray;
+  @include remSize('margin-bottom', 40px);
+  @include remSize('padding', 40px 0);
+
+  h1 {
+    color: #082a4d;
+    @include fontSize(30);
+    font-weight: $font-weight-medium;
+    margin: 0;
+    text-align: center;
+
+    @include breakpoint(md) {
+      @include fontSize(48);
+    }
+
+  }
+
+}

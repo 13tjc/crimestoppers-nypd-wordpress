@@ -1,0 +1,302 @@
+// crime filters
+.crime-filters {
+  background: $off-white;
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 30px 0);
+  }
+
+  .filters {
+
+    @include breakpoint(lg) {
+      float: left;
+      @include remSize('padding', 0 20px);
+      width: 20%;
+    }
+
+    @include breakpoint(xlg) {
+      @include remSize('padding', 0 40px);
+    }
+
+    &--first {
+
+      @include breakpoint(lg) {
+        padding-left: 0;
+      }
+
+    }
+
+    &--last {
+
+      @include breakpoint(lg) {
+        padding-right: 0;
+      }
+
+      .filters__content {
+
+        &:after {
+
+          @include breakpoint(lg) {
+            display: none;
+          }
+
+        } 
+
+      }
+
+    }
+
+    &--wide {
+
+      @include breakpoint(lg) {
+        float: left;
+        width: 40%;
+      }
+
+      .filters__list__item {
+
+        @include breakpoint(lg) {
+         display: inline-block;
+         @include remSize('margin-right', -3px);
+         @include remSize('padding-right', 5px);
+         vertical-align: top;
+         width: 50%;
+        }
+
+      }
+
+    }
+
+  }
+
+  .filters__content {
+    position: relative;
+
+    &:after {
+
+      @include breakpoint(lg) {
+        background: $light-gray;
+        content: "";
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: -20px;
+        top: 0;
+        width: 1px;
+      }
+
+      @include breakpoint(xlg) {
+        right: -40px;
+      }
+
+    }
+
+  }
+
+  .picker {
+
+    @include breakpoint(lg) {
+      left: auto;
+      right: 0;
+    }
+
+  }
+
+  .filters__btn-container {
+    background: $white;
+    @include remSize('padding-top', 20px);
+    text-align: center;
+
+    @include breakpoint(lg) {
+      background: transparent;
+      float: right;
+      @include remSize('margin-top', 20px);
+      @include remSize('padding', 0 0 0 20px);
+      text-align: right;
+      width: 20%;
+    }
+
+    @include breakpoint(xlg) {
+      @include remSize('padding-left', 40px);
+    }
+  }
+
+  .filters__filter-btn {
+    border: 2px solid $light-blue;
+
+    @include breakpoint(lg) {
+      @include remSize('margin-bottom', 10px);
+      min-width: auto;
+      width: 100%;
+    }
+
+    &:hover {
+      border-color: #29a3cc;
+    }
+
+    &--reset {
+      background: transparent;
+      border-color: #b3b3b3;
+      color: #b3b3b3;
+
+      &:hover {
+        background: transparent;
+        border-color: $dark-color;
+        color: $dark-color;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px #fff, 0 0 0 3px #b3b3b3;
+      }
+
+    }
+
+  }
+
+}
+  .crime-filters__container {
+
+    @include breakpoint(lg) {
+      @include wrapper;
+    }
+
+  }
+
+// crime listing
+.crime-listing {
+  @include remSize('padding', 40px 0);
+
+  @include breakpoint(lg) {
+    @include remSize('padding', 50px 0);
+  }
+
+  .crime-legend {
+
+    @include breakpoint(lg) {
+      float: left;
+    }
+
+  }
+
+  .pagination {
+
+    @include breakpoint(lg) {
+      float: right;
+    }
+
+  }
+
+}
+  .crime-listing__header {
+    @include remSize('margin-bottom', 40px);
+
+    @include breakpoint(lg) {
+      @include clearfix;
+      @include remSize('margin-bottom', 30px);
+    }
+
+  }
+  .crime-listing__footer {
+
+    @include breakpoint(lg) {
+      @include clearfix;
+      border-top: 1px solid $light-gray;
+      @include remSize('padding-top', 30px);
+    }
+
+  }
+
+// crime legend 
+.crime-legend {
+  @include remSize('margin-bottom', 30px);
+  text-align: center;
+
+  @include breakpoint(lg) {
+    display: inline-block;
+    @include remSize('line-height', 25px);
+    margin: 0;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+}
+  .crime-legend__list {
+    display: inline-block;
+  }
+    .crime-legend__item {
+      color: $black;
+      display: inline-block;
+      @include remSize('margin-left', 20px);
+      @include fontSize(14);
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:before {
+        content: "";
+        display: inline-block;
+        height: 10px;
+        @include remSize('margin-right', 5px);
+        position: relative;
+        top: -1px;
+        vertical-align: middle;
+        width: 10px;
+      }
+
+      &--suspect {
+
+        &:before {
+          background: #e64b17;
+        }
+
+      }
+
+      &--victim {
+
+        &:before {
+          background: #41b3d9;
+        }
+
+      }
+
+    }
+
+// crime grid
+.crime-grid {
+  @include clearfix;
+
+  @include breakpoint(lg) {
+    @include remSize('margin', 0 -10px 30px -10px);
+  }
+
+} 
+  .crime-grid__item {
+    @include remSize('margin-bottom', 30px);
+
+    @include breakpoint(md) {
+      float: left;
+      width: 50%;
+    }
+
+    @include breakpoint(lg) {
+      @include remSize('padding', 0 10px);
+      width: 33.33%;
+    }
+
+    @include breakpoint(xlg) {
+      
+      width: 25%;
+    }
+
+    .card {
+      margin: 0 auto;
+      max-width: 240px;
+
+      @include breakpoint(lg) {
+        max-width: 100%;
+      }
+
+    }
+
+  }

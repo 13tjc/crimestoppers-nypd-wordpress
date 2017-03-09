@@ -1,0 +1,359 @@
+// header
+.header {
+  background: $light-color;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  height: $header-height-sm;
+  position: relative;
+  z-index: $z-index-header;
+
+  @include breakpoint(md) {
+    height: $header-height;
+  }
+
+  @include breakpoint(xlg) {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+}
+  .header__primary {
+
+    @include breakpoint(md) {
+      height: $header-primary-height;
+    }
+
+  }
+    .header__primary__container {
+
+      @include breakpoint(md) {
+        @include wrapper;
+      }
+
+    }
+  .header__contact {
+    background: $off-white;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+
+    @include breakpoint(md) {
+      background: transparent;
+      float: right;
+      padding-top: 10px;
+      line-height: inherit;
+    }
+
+    p {
+      color: $dark-gray;
+      font-weight: $font-weight-light;
+      @include fontSize(18);
+      margin: 0;
+
+      @include breakpoint(md) {
+        @include fontSize(24);
+        font-weight: $font-weight-medium;
+        line-height: 1;
+      }
+
+    }
+
+    span {
+      color: #98a3b2;
+      display: none;
+      @include fontSize(14);
+      text-transform: uppercase;
+
+      @include breakpoint(md) {
+        display: block;
+      }
+
+    }
+
+  }
+  .header__logo {
+    background: url(../img/logo/crimestoppers.png) no-repeat 0 0;
+    @include image2x('../img/logo/crimestoppers-2x.png', 150, 34);
+    display: block;
+    height: 34px;
+    left: 20px;
+    position: absolute;
+    text-indent: -9999px;
+    top: ((($header-height-sm - 30) - 34) / 2) + 30;
+    width: 150px;
+
+    @include breakpoint(md) {
+      float: left;
+      margin-top: ($header-primary-height - 34) / 2;
+      position: static;
+    }
+
+  }
+  .header__secondary {
+    background: $header-overlay-bg-color;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow-y: auto;
+    padding-top: 200px;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: $z-index-overlay;
+
+    @include breakpoint(md) {
+      background: #f7f9fc;
+      height: $header-secondary-height;
+      opacity: 1;
+      padding: 0;
+      position: relative;
+      visibility: visible;
+      z-index: $z-index-normal;
+    }
+
+  }
+  .nav-is-open .header__secondary {
+    opacity: 1;
+    visibility: visible;
+  }
+    .header__secondary__container {
+
+      @include breakpoint(md) {
+        @include wrapper;
+      }
+
+    }
+    .header__secondary__contact {
+      @include fontSize(30);
+      @include remSize('line-height', 80px);
+      @include remSize('padding-left', 30px);
+      position: absolute;
+      top: 20px;
+      width: 100%;
+
+      @include breakpoint(md) {
+        display: none;
+      }
+
+      a {
+        color: $light-color;
+      }
+
+    }
+  .header__search {
+    left: 0;
+    position: absolute;
+    top: $nav-item-height-sm + 40px;
+    width: 100%;
+
+    @include breakpoint(md) {
+      float: right;
+      position: relative;
+      top: 0;
+      width: auto;
+    }
+
+  }
+    .header__search__field {
+      position: relative;
+
+      @include breakpoint(md) {
+        background: $light-color;
+        border: 1px solid #dadce3;
+        border-radius: 15px;
+        height: 30px;
+        margin-top: ($header-secondary-height - 30) / 2;
+        @include remSize('padding', 0 35px 0 15px);
+        width: 235px;
+      }
+
+    }
+    .header__search__input {
+      background: #bccee6;
+      border: 0;
+      border-radius: 0;
+      color: $dark-blue;
+      font-weight: $font-weight-light;
+      @include fontSize(30);
+      height: $nav-item-height-sm;
+      min-height: auto;
+      outline: 0;
+      @include remSize('padding', 0 60px 0 30px);
+      width: 100%;
+
+      @include breakpoint(md) {
+        background: transparent;
+        color: $dark-color;
+        @include fontSize(16);
+        font-weight: $font-weight-normal;
+        height: 28px;
+        padding: 0;
+      }
+
+      &::-webkit-input-placeholder {
+        color: $dark-blue;
+      }
+
+      &:-moz-placeholder {
+        color: $dark-blue;
+      }
+
+      &::-moz-placeholder {
+        color: $dark-blue;
+      }
+
+      &:-ms-input-placeholder {  
+        color: $dark-blue;
+      }
+
+    }
+    .header__search__button {
+      background: url(../img/icon/search-dark-sm.png) no-repeat center center;
+      @include image2x('../img/icon/search-dark-sm-2x.png', 21, 21);
+      display: block;
+      height: $nav-item-height-sm;
+      position: absolute;
+      right: 10px;
+      text-indent: -9999px;
+      top: 0;
+      width: 40px;
+
+      @include breakpoint(md) {
+        background: url(../img/icon/search-light.png) no-repeat center center;
+        @include image2x('../img/icon/search-light-2x.png', 17, 17);
+        height: 28px;
+        right: 5px;
+        width: 30px;
+      }
+
+    }
+
+// nav toggle
+.nav-toggle {
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  text-indent: -9990px;
+  top: ((($header-height-sm - 30) - 40) / 2) + 30;
+  width: 40px;
+  z-index: $z-index-overlay + 2;
+
+  @include breakpoint(md) {
+    display: none;
+  }
+
+  span {
+    background: $light-blue;
+    left: 5px;
+    height: 3px;
+    position: absolute;
+    text-indent: -9999px;
+    top: 11px;
+    width: 30px;
+
+    &:nth-child(1) {
+      top: 11px;
+    }
+
+    &:nth-child(2) {
+      top: 19px;
+    }
+
+    &:nth-child(3) {
+      top: 27px;
+    }
+
+  }
+
+  &--close {
+    display: none;
+
+    span {
+      background: $white;
+      left: 8px;
+      width: 24px;
+
+      &:nth-child(1) {
+        top: 18px;
+        @include vendor(transform, rotate(45deg));
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        top: 18px;
+        @include vendor(transform, rotate(-45deg));
+      }
+
+    }
+
+  }
+
+}
+
+// nav
+.nav-is-open {
+  overflow: hidden;
+
+  .nav-toggle {
+
+    &--open {
+      display: none;
+    }
+
+    &--close {
+      display: block;
+    }
+
+  }
+
+}
+  .nav__item {
+    border-bottom: 1px solid #224b73;
+
+    @include breakpoint(md) {
+      border: 0;
+      float: left;
+      @include remSize('margin-right', 40px);
+    }
+
+    &:last-child {
+
+      @include breakpoint(md) {
+        margin-right: 0;
+      }
+
+    }
+
+  }
+    .nav__item__link {
+      color: $light-color;
+      display: block;
+      @include fontSize(30);
+      font-weight: $font-weight-light;
+      @include remSize('line-height', $nav-item-height-sm);
+      @include remSize('padding', 0 30px);
+
+      @include breakpoint(md) {
+        color: $nav-link-color;
+        @include fontSize(18);
+        font-weight: $font-weight-normal;
+        @include remSize('line-height', $header-secondary-height);
+        padding: 0;
+        text-transform: uppercase;
+      }
+
+      &:hover {
+        color: $light-color;
+
+        @include breakpoint(md) {
+          color: $nav-link-hover-color;
+        }
+
+      }
+
+    }

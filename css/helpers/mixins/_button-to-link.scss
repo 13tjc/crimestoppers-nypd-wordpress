@@ -1,0 +1,32 @@
+// button to link - button appearance on sm breakpoint, change to link appearance at breakpoint
+@mixin button-to-link($breakpoint) {
+  @include button;
+
+  @include breakpoint($breakpoint) {
+    background: none;
+    color: #2eb8e5;
+    display: inline;
+    min-width: auto;
+    padding: 0;
+    text-align: left;
+  }
+
+  &:hover {
+
+    @include breakpoint($breakpoint) {
+      background: none;
+      color: #2eb8e5;
+    }
+
+  }
+
+  &:focus {
+
+    @include breakpoint($breakpoint) {
+      box-shadow: none;
+      color: #2eb8e5;
+    }
+
+  }
+
+}

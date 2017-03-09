@@ -1,0 +1,131 @@
+// tip submission overlay
+.tip-submission-overlay {
+  background: rgba(8,42,77,.98);
+  text-align: center;
+
+  @include breakpoint(md) {
+    display: none!important;
+  } 
+
+}
+  .tip-submission-overlay__close-btn {
+    background: url(../img/icon/close-x.png) no-repeat center center;
+    @include image2x('../img/icon/close-x-2x.png', 16, 17);
+    display: block;
+    height: 40px;
+    position: absolute;
+    right: 10px;
+    text-indent: -9999px;
+    top: 10px;
+    width: 40px;
+  }
+  .tip-submission-overlay__container {
+    display: table;
+    height: 100vh;
+    @include remSize('padding', 20px);
+    width: 100%;
+  }
+  .tip-submission-overlay__container__wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .tip-submission-overlay__header {
+    @include remSize('margin-bottom', 10px);
+  }
+  .tip-submission-overlay__title {
+    color: $white;
+    @include fontSize(24);
+    font-weight: $font-weight-light;
+    @include remSize('margin-bottom', 5px);
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .tip-submission-overlay__number {
+    @include fontSize(24);
+    line-height: 1.2;
+    margin: 0;
+
+    span {
+      display: block;
+      @include fontSize(14);
+    }
+
+    a {
+      color: #85d7f2;
+
+      &:hover {
+        color: $white;
+      }
+
+    }
+
+  }
+  .tip-submission-overlay__phone {
+    background: url(../img/icon/tip-phone-lg.png) no-repeat;
+    @include image2x('../img/icon/tip-phone-lg-2x.png', 240, 240);
+    display: block;
+    height: 240px;
+    @include remSize('margin', 0 auto 10px);
+    text-indent: -9999px;
+    width: 240px;
+  }
+  .tip-submission-overlay__list {
+    @include remSize('margin-bottom', 20px);
+  }
+    .tip-submission-overlay__list__item {
+      display: inline-block;
+      @include remSize('margin', 0 20px);
+      vertical-align: top;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+    }
+    .tip-submission-overlay__list__item__btn {
+      color: $white;
+      display: block;
+      @include fontSize(11);
+      text-align: center;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $white;
+      }
+
+      span {
+        background: url(../img/icon/contact-icons-lg.png) no-repeat 0 0 #133558;
+        @include image2x('../img/icon/contact-icons-lg-2x.png', 46, 138);
+        border: 1px solid $blue;
+        border-radius: 50%;
+        display: block;
+        height: 48px;
+        @include remSize('margin', 0 auto 10px);
+        width: 48px;
+      }
+
+      &--form {
+
+      }
+
+      &--text {
+        span {
+          background-position: 0 -46px;
+        }
+      }
+
+      &--app {
+        span {
+          background-position: 0 -92px;
+        }
+      }
+
+    }
+  .tip-submission-overlay__continue-btn {
+    color: #85d7f2;
+    @include fontSize(14);
+  }

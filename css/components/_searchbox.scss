@@ -1,0 +1,46 @@
+// searchbox
+.searchbox {
+  @include remSize('padding-right', 85px);
+  position: relative;
+}
+  .searchbox__input {
+    background: $white;
+    border: 1px solid #a9b8cc;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    color: $black;
+    @include fontSize(18);
+    height: 45px;
+
+    &::-webkit-input-placeholder {
+      color: $black;
+    }
+
+    &:-moz-placeholder {
+      color: $black; 
+    }
+
+    &::-moz-placeholder {
+      color: $black;
+    }
+
+    &:-ms-input-placeholder {
+      color: $black; 
+    }
+
+  }
+  .searchbox__button {
+    background: url(../img/icon/search-large.png) no-repeat center center $light-blue;
+    @include image2x('../img/icon/search-large-2x.png', 21, 21);
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: $white;
+    display: inline-block;
+    height: 45px;
+    position: absolute;
+    right: 0;
+    text-indent: -9999px;
+    top: 0;
+    width: 85px;
+  }

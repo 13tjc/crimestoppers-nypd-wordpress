@@ -1,0 +1,196 @@
+// card
+.card {
+  background: #f7f9fc;
+  border: 1px solid #e5e5e5;
+  line-height: 1;
+  min-height: 375px;
+  position: relative;
+  text-align: center;
+
+  &:before {
+    content: "";
+    height: 4px;
+    left: -1px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    width: calc(100% + 2px);
+    z-index: 1;
+  }
+
+  &--wanted {
+
+    &:before {
+      background: #e64b17;
+    }
+
+  }
+
+  &--victim {
+
+    &:before {
+      background: #41b3d9;
+    }
+
+  }
+
+  &--closed {
+
+    &:after {
+      background: rgba(0,0,0,.35);
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: $z-index-normal + 1;
+    }
+
+  }
+
+}
+  .card__profile {
+    background: $white;
+    min-height: 220px;
+    @include remSize('padding', 15px 0);
+    position: relative;
+
+    a {
+
+      &:focus {
+
+        .card__photo {
+          border-color: $light-blue;
+
+          &:after {
+            border-top-color: $light-blue;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+  .card__status {
+    color: $white;
+    @include fontSize(18);
+    font-weight: $font-weight-medium;
+    line-height: 40px;
+    left: 0;
+    margin-top: -20px;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    z-index: $z-index-normal + 2;
+    width: 100%;
+
+    @include breakpoint(md) {
+      @include fontSize(24);
+    }
+
+  }
+    .card__type {
+      color: #999;
+      @include fontSize(18);
+      @include remSize('margin-bottom', 10px);
+      text-transform: uppercase;
+    }
+    .card__photo {
+      align-items: center;
+      display: block;
+      display: flex;
+      border: 2px solid #b5b5b5;
+      height: 124px;
+      margin: 0 auto 10px;
+      width: 124px;
+      position: relative;
+
+      &:hover {
+        border-color: $light-blue;
+
+        &:after {
+          border-top-color: $light-blue;
+        }
+
+      } 
+
+      &:before {
+        border: 7px solid transparent;
+        border-top-color: $white;
+        content: "";
+        display: block;
+        height: 0;
+        left: 50%;
+        margin-left: -7px;
+        position: absolute;
+        top: -2px;
+        width: 0;
+        z-index: 2;
+      }
+
+      &:after {
+        border: 9px solid transparent;
+        border-top-color: #b5b5b5;
+        content: "";
+        display: block;
+        height: 0;
+        left: 50%;
+        margin-left: -9px;
+        position: absolute;
+        top: -2px;
+        width: 0;
+        z-index: 1;
+      }
+
+    }
+      .card__photo__img {
+        height: auto;
+        margin: 0 auto;
+        max-height: 120px;
+        max-width: 120px;
+        width: auto;
+      }
+    .card__label {
+      color: #999;
+      @include fontSize(16);
+    }
+  .card__details {
+    @include remSize('padding', 15px 0);
+  }
+    .card__crime {
+      color: #9da1a6;
+      @include fontSize(14);
+      @include remSize('margin-bottom', 15px);
+      text-transform: uppercase;
+    }
+    .card__reward {
+      color: $dark-gray;
+      @include fontSize(18);
+      font-weight: $font-weight-light;
+      @include remSize('margin-bottom', 15px);
+    }
+      .card__reward__value {
+        font-weight: $font-weight-bold;
+      }
+    .card__btn {
+      background: #b8c6d9;
+
+      &:hover {
+        background: #a3afbf;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 2px #e5e5e5, 0 0 0 3px #b8c6d9;
+      }
+
+      &--disabled {
+        cursor: default;
+        opacity: .25;
+      }
+
+    }

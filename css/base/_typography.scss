@@ -1,0 +1,86 @@
+// typography
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+a:hover {
+  color: $link-hover-color;
+}
+
+h1 {
+  @include fontSize(48);
+  font-weight: $font-weight-medium;
+  @include remSize('margin-bottom', 30px);
+  text-transform: uppercase;
+}
+
+h2 {
+  @include fontSize(30);
+  @include remSize('margin-bottom', 20px);
+}
+
+p {
+  @include remSize('margin-bottom', 20px);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+strong {
+  font-weight: $font-weight-bold;
+}
+
+em {
+  font-style: italic;
+}
+
+.numbered-list {
+  @include remSize('padding-left', 20px);
+
+  li {
+    counter-increment: number-counter;
+    @include remSize('margin-bottom', 15px);
+    @include remSize('padding-left', 25px);
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:before {
+      content: counter(number-counter);
+      @include fontSize(20);
+      font-weight: $font-weight-medium;
+      left: 0;
+      line-height: 1;
+      position: absolute;
+      top: 0;
+
+      @include breakpoint(lg) {
+        @include fontSize(24);
+        top: -2px;
+      }
+
+    }
+
+    p {
+      @include remSize('margin-bottom', 10px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+}

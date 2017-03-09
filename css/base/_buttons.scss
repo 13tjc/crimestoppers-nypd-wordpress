@@ -1,0 +1,11 @@
+// buttons
+button {
+  background: transparent;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  text-align: left;
+}
+.btn {
+  @include button;
+}
